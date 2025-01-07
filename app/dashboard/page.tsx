@@ -1,3 +1,11 @@
+   // dashboard/page.tsx
+   import { MessageProvider } from './_components/MessageProvider';
+   import MessageList from './_components/MessageList';
+   import MessageInput from './_components/MessageInput';
+
+
+
+
 export default function DashboardPage() {
   return (
     <div className="h-full flex flex-col">
