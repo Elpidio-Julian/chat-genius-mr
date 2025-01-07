@@ -9,8 +9,7 @@ export default function SignUpPage() {
           card: 'rounded-xl shadow-md'
         }
       }}
-      afterSignUpUrl="/dashboard" 
-      signInUrl="/sign-in" />
+/>
     </div>
   );
 } 
