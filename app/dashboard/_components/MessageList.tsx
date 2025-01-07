@@ -15,7 +15,7 @@ export default function MessageList() {
   }, [messages]);
 
   return (
-    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-800">
+    <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-black-800">
       {messages
         .filter((msg) => msg.channelId === currentChannel)
         .map((message) => (
