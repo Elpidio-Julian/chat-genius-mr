@@ -1,16 +1,25 @@
-import '@/app/globals.css'
-import { Inter } from 'next/font/google'
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <header className="p-4">
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <div className="flex justify-between items-center">
+                <h1 className="text-2xl font-bold">Chat-Genius</h1>
+                <UserButton />
+              </div>
+            </SignedIn>
+          </header>
+          <main>{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
